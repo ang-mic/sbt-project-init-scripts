@@ -41,7 +41,7 @@ cat > $PROJECT_NAME/build.sbt << EOF
   libraryDependencies ++= {
     // val akkaVersion = "2.4.9"
     Seq(
-      "org.scalatest" % "scalatest_2.12" % "3.0.0",
+      "org.scalatest" % "scalatest_2.12" % "3.0.0" % "test",
       "com.typesafe" % "config" % "1.3.0"
     )
   } 
