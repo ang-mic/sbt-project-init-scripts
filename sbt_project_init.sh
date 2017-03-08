@@ -55,7 +55,7 @@ EOF
 
 # create project/build.properties file
 cat > $PROJECT_NAME/project/build.properties << EOF
-  sbt.version=0.13.12
+  sbt.version=0.13.13
 EOF
 
 # create resources/application.conf file
@@ -63,7 +63,7 @@ touch $PROJECT_NAME/src/main/resources/application.conf
 
 # create project/build.properties file
 cat > $PROJECT_NAME/project/build.properties << EOF
-  sbt.version=0.13.12
+  sbt.version=0.13.13
 EOF
 
 # create .gitignore file
