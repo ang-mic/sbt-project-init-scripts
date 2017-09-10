@@ -17,23 +17,17 @@ mkdir -p $PROJECT_NAME/project/{project,target}
 # create build.sbt file
 cat > $PROJECT_NAME/build.sbt << EOF
   // Project related information
-  organization := "org.angmic"
-  version := "0.0.1"
-  name := "$PROJECT_NAME"
+  organization := "org.io"
+  version      := "0.0.1"
+  name         := "$PROJECT_NAME"
 
   // Scala language related information
-  ivyScala := ivyScala.value map {
-    _.copy(overrideScalaVersion = true)
-  }                                     // Forces the Scala version
-  scalaVersion := "2.12.0"
-  scalacOptions := Seq(
-    "-unchecked",
-    "-deprecation",
-    "-encoding",
-    "utf8")
+  ivyScala := ivyScala.value map(_.copy(overrideScalaVersion = true))
+  scalaVersion  := "2.12.3"
+  scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
-  //Packaging and excecution instractions
-  enablePlugins(JavaAppPackaging)                             // Enables packaging  and spesifies the type of the package
+  //Packaging and execution instructions
+  enablePlugins(JavaAppPackaging)                             // Enables packaging  and specifies the type of the package
   mainClass in Universal := Some("com.example.package.Class") // Specifies the class with the 'main' methods
   executableScriptName := "start"
 
@@ -55,29 +49,25 @@ EOF
 
 # create project/build.properties file
 cat > $PROJECT_NAME/project/build.properties << EOF
-  sbt.version=0.13.13
+  sbt.version=0.13.16
 EOF
 
 # create resources/application.conf file
 touch $PROJECT_NAME/src/main/resources/application.conf
 
-# create project/build.properties file
-cat > $PROJECT_NAME/project/build.properties << EOF
-  sbt.version=0.13.13
-EOF
 
 # create .gitignore file
-cat > $PROJECT_NAME/.gitignore << EOF
-  *.class
-  *.log
+# cat > $PROJECT_NAME/.gitignore << EOF
+#   *.class
+#   *.log
 
-  # sbt specific
-  dist/*
-  target/
-  project/plugins/project/
-  project/targtet/
+#   # sbt specific
+#   dist/*
+#   target/
+#   project/plugins/project/
+#   project/targtet/
 
-  # Idea specific
-  .idea
-  .idea_modules
-EOF
+#   # Idea specific
+#   .idea
+#   .idea_modules
+# EOF
