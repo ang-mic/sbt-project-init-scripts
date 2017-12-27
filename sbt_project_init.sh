@@ -23,7 +23,7 @@ cat > $PROJECT_NAME/build.sbt << EOF
 
   // Scala language related information
   ivyScala := ivyScala.value map(_.copy(overrideScalaVersion = true))
-  scalaVersion  := "2.12.3"
+  scalaVersion  := "2.12.4"
   scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
   //Packaging and execution instructions
@@ -35,21 +35,21 @@ cat > $PROJECT_NAME/build.sbt << EOF
   libraryDependencies ++= {
     // val akkaVersion = "2.4.9"
     Seq(
-      "org.scalatest" % "scalatest_2.12" % "3.0.0" % "test",
-      "com.typesafe" % "config" % "1.3.0"
+      "org.scalatest" % "scalatest_2.12" % "3.0.4" % "test",
+      "com.typesafe" % "config" % "1.3.2"
     )
   } 
 EOF
 
 # create project/plugins.sbt file
 cat > $PROJECT_NAME/project/plugins.sbt << EOF
-  addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.0.0-RC2")
-  addSbtPlugin("io.spray" % "sbt-revolver" % "0.8.0")
+  addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.2")
+  addSbtPlugin("io.spray" % "sbt-revolver" % "0.9.0")
 EOF
 
 # create project/build.properties file
 cat > $PROJECT_NAME/project/build.properties << EOF
-  sbt.version=0.13.16
+  sbt.version=1.0.4
 EOF
 
 # create resources/application.conf file
