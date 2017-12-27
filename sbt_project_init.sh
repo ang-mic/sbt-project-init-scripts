@@ -21,8 +21,7 @@ cat > $PROJECT_NAME/build.sbt << EOF
   version      := "0.0.1"
   name         := "$PROJECT_NAME"
 
-  // Scala language related information
-  ivyScala := ivyScala.value map(_.copy(overrideScalaVersion = true))
+  // Scala language related informationQ
   scalaVersion  := "2.12.4"
   scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
@@ -49,7 +48,7 @@ EOF
 
 # create project/build.properties file
 cat > $PROJECT_NAME/project/build.properties << EOF
-  sbt.version=1.0.4
+  sbt.version=1.0.3
 EOF
 
 # create resources/application.conf file
