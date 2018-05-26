@@ -4,4 +4,4 @@ A simple shell script for creating Scala/Java SBT projects
 
 ## Usage
 In the terminal, run the following:
-- bash sbt_project_init.sh _project_name_
+- ./sbt_project_init.sh -n 'project-name'_
